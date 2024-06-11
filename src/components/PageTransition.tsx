@@ -15,9 +15,8 @@ const PageTransition = ({ children }: { children: ReactNode }) => {
             opacity: 0,
             transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
           }}
-        >
+        />
           {children}
-        </motion.div>
       </div>
     </AnimatePresence>
   );
