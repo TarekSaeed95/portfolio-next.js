@@ -1,16 +1,15 @@
 "use client";
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaFigma,
-  FaBootstrap,
-} from "react-icons/fa";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaBootstrap } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiRedux } from "react-icons/si";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 const about = {
   title: "About me",
   descrition:
@@ -95,11 +94,11 @@ const skills = {
   skillList: [
     {
       icon: <FaHtml5 />,
-      name: "HTML 5",
+      name: "HTML5",
     },
     {
       icon: <FaCss3 />,
-      name: "CSS 3",
+      name: "CSS3",
     },
     {
       icon: <FaJs />,
@@ -120,10 +119,6 @@ const skills = {
     {
       icon: <SiRedux />,
       name: "Redux",
-    },
-    {
-      icon: <FaFigma />,
-      name: "Figma",
     },
     {
       icon: <FaBootstrap />,
@@ -210,8 +205,32 @@ const resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
-            <TabsContent value="skills" className="w-full">
-              skills
+            <TabsContent value="skills" className="w-full h-full">
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold text-center xl:text-left">
+                  {skills.title}
+                </h3>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4">
+                  {skills.skillList.map((skill, i) => {
+                    return (
+                      <li key={i} className="flex items-center gap-3">
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                {skill.icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
             <TabsContent value="about" className="w-full">
               about
