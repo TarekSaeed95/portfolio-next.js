@@ -12,8 +12,23 @@ import {
 } from "@/components/ui/tooltip";
 const about = {
   title: "About me",
-  descrition:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil autem eum possimus quia, vero officia perferendis tempore quae voluptas deserunt. Maiores dolores ipsa unde fuga sequi accusamus fugit earum aliquam?",
+  descrition: `Highly skilled and motivated front-end
+    developer with 2 years of professional
+    experience in web development.
+    Proficient in HTML, CSS, and JavaScript,
+    with a strong understanding of React.
+    Proven ability to collaborate effectively
+    with cross-functional teams and meet
+    project deadlines. Excellent
+    problem-solving and debugging skills, with
+    a keen eye for detail and a passion for
+    delivering high-quality code. Committed
+    to continuous learning and staying up to
+    date with the latest industry trends and
+    technologies. Seeking new challenges to
+    further enhance skills and contribute to
+    innovative web development projects.
+    `,
   info: [
     {
       fieldName: "Name",
@@ -33,7 +48,7 @@ const about = {
     },
     {
       fieldName: "Linkedin",
-      fieldValue: "linkedin.com/in/tarek-saeeed/",
+      fieldValue: "/in/tarek-saeeed/",
     },
     {
       fieldName: "Email",
@@ -83,14 +98,14 @@ const education = {
     },
     {
       institution: "ITI Cairo",
-      field: "Full Stack Web Development Using .NET",
+      field: "Full Stack Web Development .NET",
       year: "2023",
     },
   ],
 };
 //skills
 const skills = {
-  title: "My Skills",
+  title: "My skills",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -114,7 +129,7 @@ const skills = {
     },
     {
       icon: <SiTailwindcss />,
-      name: "TailwindCSS",
+      name: "Tailwind CSS",
     },
     {
       icon: <SiRedux />,
@@ -134,7 +149,7 @@ const resume = () => {
       animate={{
         opacity: 1,
         transition: {
-          delay: 1.4,
+          delay: 2.4,
           duration: 0.4,
           ease: "easeIn",
         },
@@ -166,11 +181,11 @@ const resume = () => {
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.position}
+                            {item.company}
                           </h3>
                           <div className="flex items-center gap-3">
                             <span className="w-[6px] h-[6px] rounded-full bg-accent "></span>
-                            <p className="text-white/60">{item.company}</p>
+                            <p className="text-white/60">{item.position}</p>
                           </div>
                         </li>
                       );
@@ -232,8 +247,29 @@ const resume = () => {
                 </ul>
               </div>
             </TabsContent>
-            <TabsContent value="about" className="w-full">
-              about
+            <TabsContent
+              value="about"
+              className="w-full text-center xl:text-left"
+            >
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className=" text-white/60 mx-auto xl:mx-0">
+                  {about.descrition}
+                </p>
+              <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                {about.info.map((item, i) => {
+                  return (
+                    <li
+                      className="flex items-center justify-center xl:justify-start gap-2"
+                      key={i}
+                      >
+                      <span className="text-white/60">{item.fieldName}:</span>
+                      <span className="text-xl">{item.fieldValue}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+                </div>
             </TabsContent>
           </div>
         </Tabs>
