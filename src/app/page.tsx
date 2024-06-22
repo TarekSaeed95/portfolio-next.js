@@ -20,6 +20,7 @@ export default function Home() {
               professional experience in web development.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
+            <a href="/Tarek_Fakhr_eldeen_Frontend_Developer.pdf" download>
               <Button
                 variant="outline"
                 size="lg"
@@ -28,6 +29,7 @@ export default function Home() {
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />
               </Button>
+              </a>
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"

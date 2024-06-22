@@ -8,10 +8,10 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 const socials = [
-  { icon: <FaGithub />, path: "" },
-  { icon: <FaLinkedinIn />, path: "" },
-  { icon: <FaTwitter />, path: "" },
-  { icon: <FaWhatsapp />, path: "" },
+  { icon: <FaGithub />, path: "https://github.com/TarekSaeed95" },
+  { icon: <FaLinkedinIn />, path: "https://www.linkedin.com/in/tarek-saeeed/" },
+  { icon: <FaTwitter />, path: "https://x.com/fa5r_eldeen" },
+  { icon: <FaWhatsapp />, path: "https://wa.link/kopbz3" },
 ];
 type SocialPropsTypes = {
   containerStyles: string;

@@ -3,15 +3,23 @@ import React from "react";
 import Nav from "./Nav";
 import { Button } from "./ui/button";
 import MobileNav from "./MobileNav";
+import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="py-8 xl:py-12 text-white ">
+    <header className="pb-8 xl:pb-12 text-white ">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
-          <h1 className="text-4xl font-semibold">
-            Tarek <span className="text-accent">.</span>
-          </h1>
+          <div className="text-4xl font-semibold w-48 h-32">
+            <Image
+              alt=""
+              src="/assets/logo-white.png"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "100%" }} // optional
+            />
+          </div>
         </Link>
         {/* desktop nav */}
         <div className="hidden xl:flex items-center gap-8">
@@ -22,7 +30,7 @@ const Header = () => {
         </div>
         {/* mobile nav */}
         <div className="xl:hidden">
-          <MobileNav/>
+          <MobileNav />
         </div>
       </div>
     </header>
