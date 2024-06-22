@@ -154,7 +154,7 @@ const resume = () => {
           ease: "easeIn",
         },
       }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+      className=" flex items-center justify-center py-12 xl:py-0"
     >
       <div className="container mx-auto">
         <Tabs

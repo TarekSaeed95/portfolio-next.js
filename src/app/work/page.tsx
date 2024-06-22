@@ -87,9 +87,9 @@ const projects = [
         name: "React Query",
       },
     ],
-    image: "/assets/work/deliveryApp.jpg",
+    image: "/assets/work/admin-dashboard.jpg",
     github: "",
-    live: "https://supplychain.pharmacymarts.com/",
+    live: "https://admin.pharmacymarts.com/",
   },
   {
     num: "04",
@@ -127,7 +127,7 @@ responsible for building the UI and integrating it with the backend endpoints.`,
         name: "TailwindCSS",
       },
     ],
-    image: "",
+    image: "/assets/work/ARTE.BLVD.jpg",
     github: "",
     live: null,
   },
@@ -260,7 +260,7 @@ const Work = () => {
         opacity: 1,
         transition: { delay: 1.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0 "
+      className="flex flex-col justify-center xl:px-0 "
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
